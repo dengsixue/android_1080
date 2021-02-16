@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven'
 
 android {
     compileSdkVersion 29
@@ -13,22 +12,6 @@ android {
         versionName "1.0"
     }
 
-    ext {
-        PUBLISH_GROUP_ID = 'com.xx'
-        PUBLISH_ARTIFACT_ID = 'loadingdialog'
-        PUBLISH_VERSION = android.defaultConfig.versionName
-    }
-    uploadArchives {
-        repositories.mavenDeployer {
-            def deployPath = file(getProperty('aar.deployPath'))
-            repository(url: "file://${deployPath.absolutePath}")
-            pom.project {
-                groupId project.PUBLISH_GROUP_ID
-                artifactId project.PUBLISH_ARTIFACT_ID
-                version project.PUBLISH_VERSION
-            }
-        }
-    }
     buildTypes {
         release {
             minifyEnabled false
