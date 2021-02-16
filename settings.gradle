@@ -1,4 +1,3 @@
-include ':android_1080'
 include ':refreshview'
 include ':app'
 rootProject.name = "android_1080"
